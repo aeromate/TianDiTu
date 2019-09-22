@@ -29,6 +29,6 @@ map.addLayer(annolayer);
 * ter: 地形底图
 * cta: 地形注记图层
 
-##预览
-![](https://github.com/huangli005/TianDiTu/raw/master/images/1.png) 
-![](https://github.com/huangli005/TianDiTu/raw/master/images/2.png) 
+## 预览
+![](https://raw.githubusercontent.com/aeromate/TianDiTu/master/images/1.png) 
+![](https://raw.githubusercontent.com/aeromate/TianDiTu/master/images/2.png) 
