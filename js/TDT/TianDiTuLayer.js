@@ -10,7 +10,7 @@ define("TDT/TianDiTuLayer", [
             // type为"ano",则返回注记图层
             this._type = type;
             var cornerCoordinate = 20037508.3427892;
-            this.baseUrl = 'http://t0.tianditu.com/';
+            this.baseUrl = 'http://t3.tianditu.gov.cn/';
             this.spatialReference = typeMatrixSet == 'w' ? new esri.SpatialReference({wkid: 102100}) : new esri.SpatialReference({wkid: 4326});
             var extent = typeMatrixSet == 'w' ? new esri.geometry.Extent(-cornerCoordinate, -cornerCoordinate, cornerCoordinate, cornerCoordinate, this.spatialReference) : new esri.geometry.Extent(-180, -90, 180, 90, this.spatialReference);
             this.initialExtent = (this.fullExtent = extent);
@@ -85,9 +85,9 @@ define("TDT/TianDiTuLayer", [
             // 地图和注记图层的tileUrl分别用变量来设置，
             // 是为了在切换地图的时候，正常显示底图和注记
             if (this._type == "ano") {
-                tileUrl = "http://t0.tianditu.com/" + baseAnnoName + "_" + typeMatrixSet + "/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=" + baseAnnoName + "&STYLE=default&TILEMATRIXSET=" + typeMatrixSet + "&TILEMATRIX=" + level + "&TILEROW=" + row + "&TILECOL=" + col + "&FORMAT=tiles";
+                tileUrl = "http://t3.tianditu.gov.cn/" + baseAnnoName + "_" + typeMatrixSet + "/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=" + baseAnnoName + "&STYLE=default&TILEMATRIXSET=" + typeMatrixSet + "&TILEMATRIX=" + level + "&TILEROW=" + row + "&TILECOL=" + col + "&FORMAT=tiles" + "&tk=a4ee5c551598a1889adfabff55a5fc27" ;
             } else {
-                tileUrl = "http://t0.tianditu.com/" + baseTypeName + "_" + typeMatrixSet + "/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=" + baseTypeName + "&STYLE=default&TILEMATRIXSET=" + typeMatrixSet + "&TILEMATRIX=" + level + "&TILEROW=" + row + "&TILECOL=" + col + "&FORMAT=tiles";
+                tileUrl = "http://t3.tianditu.gov.cn/" + baseTypeName + "_" + typeMatrixSet + "/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=" + baseTypeName + "&STYLE=default&TILEMATRIXSET=" + typeMatrixSet + "&TILEMATRIX=" + level + "&TILEROW=" + row + "&TILECOL=" + col + "&FORMAT=tiles"  + "&tk=a4ee5c551598a1889adfabff55a5fc27";
             }
             return tileUrl;
         }
